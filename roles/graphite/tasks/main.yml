@@ -74,6 +74,9 @@
 - name: unarchive source
   command: tar -xvzf graphite-web-{{ graphite.version }}.tar.gz chdir=/opt/graphite creates=/opt/graphite/graphite-web-{{ graphite.version }}
 
+- name: link webapp folder
+  file: src=/opt/graphite/graphite-web-{{ graphite.version }}/webapp dest=/opt/graphite/webapp state=link
+
 - name: install graphite
   command: ./bin/pip install ./graphite-web-{{ graphite.version }}/ chdir=/opt/graphite
 
