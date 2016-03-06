@@ -27,7 +27,7 @@
   with_items:
     - psycopg2
     - django<1.7
-    - django-tagging 
+    - django-tagging<0.3.5
     - python-memcached 
     - pytz 
     - pyparsing
